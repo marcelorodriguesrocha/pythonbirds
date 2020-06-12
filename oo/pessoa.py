@@ -18,3 +18,7 @@ if __name__ == '__main__':
     print(giovanna.idade)
     for filho in giovanna.filhos:
         print(filho.nome)
+        giovanna.sobrenome= 'Rocha' # atributo dinamico foi feito depois dos atributos acima
+        del giovanna.filhos
+        print(giovanna.__dict__)
+        print(marcelo.__dict__)
