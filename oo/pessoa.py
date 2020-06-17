@@ -17,8 +17,13 @@ class Pessoa:
     def nome_e_atributos_de_classe(cls): # metedo de classe, para acessar metodos da propria classe
         return f' {cls} - olhos {cls.olhos}'
 
+
+class Homem(Pessoa):
+    pass
+
+
 if __name__ == '__main__':
-    marcelo = Pessoa(nome='Marcelo')
+    marcelo = Homem(nome='Marcelo')
     giovanna = Pessoa(marcelo, nome='Giovanna')
     print(Pessoa.cumprimentar(giovanna))
     print(id(giovanna))
@@ -37,6 +42,12 @@ if __name__ == '__main__':
         print(id(Pessoa.olhos), id(giovanna.olhos), id(marcelo.olhos))
         print(Pessoa.metodo_estatico(), marcelo.metodo_estatico())
         print(Pessoa.nome_e_atributos_de_classe(), marcelo.metodo_estatico())
+
+        pessoa = Pessoa('anônimo')
+        print(isinstance(pessoa, Pessoa))
+        print(isinstance(pessoa, Homem))
+        print(isinstance(marcelo, Pessoa))
+        print(isinstance(marcelo, Homem))
 
 
 
